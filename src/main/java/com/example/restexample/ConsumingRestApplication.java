@@ -26,9 +26,14 @@ public class ConsumingRestApplication {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
-			Quote quote = restTemplate.getForObject(
-					"https://gturnquist-quoters.cfapps.io/api/random", Quote.class);
-			log.info("Resultado da Chamada REST: " + quote.toString());
+
+
+			for (int i = 0; i < 1; i++) {
+				Quote quote = restTemplate.getForObject(
+						"https://gturnquist-quoters.cfapps.io/api/random", Quote.class);
+				log.info("Resultado da Chamada REST: " + quote.toString());
+
+			}
 		};
 	}
 }
